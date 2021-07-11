@@ -3,6 +3,12 @@ module.exports = {
 	env: {
 		node: true,
 	},
+	globals: {
+		window: true,
+		document: true,
+		location: true,
+		history: true,
+	},
 	extends: [ 'plugin:gridsome/recommended', 'eslint:recommended' ],
 	parserOptions: {
 		parser: 'babel-eslint',

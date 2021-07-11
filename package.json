@@ -7,12 +7,17 @@
     "build": "gridsome build"
   },
   "dependencies": {
+    "@gridsome/source-filesystem": "^0.6.2",
+    "@gridsome/transformer-remark": "^0.6.4",
     "gridsome": "^0.7.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.29.0",
     "eslint-plugin-gridsome": "^1.6.2",
-    "vue-eslint-parser": "^7.6.0"
+    "node-sass": "^6.0.1",
+    "sass-loader": "^10.2.0",
+    "vue-eslint-parser": "^7.6.0",
+    "vue-svg-inline-loader": "^2.1.2"
   }
 }
