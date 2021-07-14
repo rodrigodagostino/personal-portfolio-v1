@@ -3,35 +3,63 @@
 		<main id="site-main" class="site-main">
 			<BaseSection name="about-me" title="Some things I’ve built">
 				<template #header>
-					<p>Hi there! My name is</p>
+					<p v-reveal-on-scroll="{ animation: 'fade-up', delay: 150 }">
+						Hi there! My name is
+					</p>
 					<h1 class="section__title">
-						<span class="section__title-line-1">Rodrigo D’Agostino,</span>
-						<span class="section__title-line-2">
+						<span
+							class="section__title-line-1"
+							v-reveal-on-scroll="{ animation: 'fade-up', delay: 300 }"
+						>
+							Rodrigo D’Agostino,
+						</span>
+						<span
+							class="section__title-line-2"
+							v-reveal-on-scroll="{ animation: 'fade-up', delay: 450 }"
+						>
 							I build things for the web.
 						</span>
 					</h1>
-					<p>
+					<p v-reveal-on-scroll="{ animation: 'fade-up', delay: 600 }">
 						I'm a web designer and front-end developer currently based in Córdoba,
 						Argentina looking to work along with you to make things that
 						<em>make a difference</em>.
 					</p>
 				</template>
-				<a href="https://github.com/rodrigodagostino">
-					<img svg-inline src="~/assets/icons/github.svg" alt="Visit my GitHub page" />
-				</a>
-				<a href="https://codepen.io/rodrigodagostino">
-					<img svg-inline src="~/assets/icons/codepen.svg" alt="Visit my Codepen page" />
-				</a>
-				<a href="https://behance.net/rodrigodagostino">
-					<img svg-inline src="~/assets/icons/behance.svg" alt="Visit my Behance page" />
-				</a>
-				<a href="https://www.linkedin.com/in/rodrigodagostino/">
-					<img svg-inline src="~/assets/icons/linkedin.svg" alt="Visit my LinkedIn profile" />
-				</a>
-				<a href="mailto:rodrigo.dagostino@gmail.com">
-					<img svg-inline src="~/assets/icons/envelope.svg" alt="Send me an e-mail" />
-				</a>
-				<BaseButton href="~/resume.pdf" variation="solid-primary">Resume</BaseButton>
+				<div v-reveal-on-scroll="{ animation: 'fade-up', delay: 750 }">
+					<a href="https://github.com/rodrigodagostino">
+						<img
+							svg-inline
+							src="~/assets/icons/github.svg"
+							alt="Visit my GitHub page"
+						/>
+					</a>
+					<a href="https://codepen.io/rodrigodagostino">
+						<img
+							svg-inline
+							src="~/assets/icons/codepen.svg"
+							alt="Visit my Codepen page"
+						/>
+					</a>
+					<a href="https://behance.net/rodrigodagostino">
+						<img
+							svg-inline
+							src="~/assets/icons/behance.svg"
+							alt="Visit my Behance page"
+						/>
+					</a>
+					<a href="https://www.linkedin.com/in/rodrigodagostino/">
+						<img
+							svg-inline
+							src="~/assets/icons/linkedin.svg"
+							alt="Visit my LinkedIn profile"
+						/>
+					</a>
+					<a href="mailto:rodrigo.dagostino@gmail.com">
+						<img svg-inline src="~/assets/icons/envelope.svg" alt="Send me an e-mail" />
+					</a>
+					<BaseButton href="~/resume.pdf" variation="solid-primary">Resume</BaseButton>
+				</div>
 			</BaseSection>
 			<BaseSection name="skills" title="Some technologies I’ve been working with">
 				<SkillList />
@@ -40,8 +68,10 @@
 				<ProjectList :allProjects="$page.allProject.edges" />
 			</BaseSection>
 			<BaseSection name="contact" title="Get in touch">
-				<p>Are you interested in working together?<br>Hit me up! My inbox is always open 😉</p>
-				<BaseButton href="mailto:rodrigo.dagostino@gmail.com" variation="solid-dark">Say hello</BaseButton>
+				<p>Are you interested in working together?<br />Hit me up! My inbox is always open 😉</p>
+				<BaseButton href="mailto:rodrigo.dagostino@gmail.com" variation="solid-dark">
+					Say hello
+				</BaseButton>
 			</BaseSection>
 		</main>
 	</Layout>
@@ -92,8 +122,12 @@ export default {
 		line-height: 1.1;
 		margin-top: 0.5rem;
 
+		&-line-1,
 		&-line-2 {
 			display: block;
+		}
+
+		&-line-2 {
 			color: var(--grey-600);
 		}
 
@@ -138,42 +172,40 @@ export default {
 	}
 }
 
-.slide-fade-enter-active {
-	animation: slide-fade 0.32s ease;
-}
+/**
+ * Animations
+ */
+[class*='ros-fade'] {
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.5s ease, transform 0.5s ease;
 
-.slide-fade-leave-active {
-	animation: slide-fade 0.32s ease reverse;
-}
-
-@keyframes slide-fade {
-	from {
-		opacity: 0;
-		transform: translate3d(0, 2rem, 0);
-	}
-	to {
+	&.ros-animate {
+		visibility: visible;
 		opacity: 1;
 		transform: translate3d(0, 0, 0);
 	}
 }
 
-.fade-enter-active {
-	animation: fade 0.32s ease;
+.ros-fade-up {
+	transform: translate3d(0, 4rem, 0);
 }
 
-.fade-leave-active {
-	animation: fade 0.32s ease reverse;
+.ros-fade-right {
+	transform: translate3d(4rem, 0, 0);
 }
 
-@keyframes fade {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+.ros-fade-down {
+	transform: translate3d(0, -4rem, 0);
 }
 
+.ros-fade-left {
+	transform: translate3d(-4rem, 0, 0);
+}
+
+/**
+ * Accessibility
+ */
 .screen-reader-only {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
