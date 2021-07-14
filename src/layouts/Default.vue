@@ -1,29 +1,38 @@
 <template>
-	<div class="layout">
+	<div class="layout" :class="{ blured: isNavActive }">
 		<header id="site-header" class="site-header">
 			<div class="container">
 				<g-link to="/" class="site-nav__home">RD’</g-link>
 				<button
 					id="menu-toggle"
-					@click="toggleNavStatus"
 					class="menu-toggle"
 					:class="{ 'is-active': isNavActive }"
 					aria-controls="site-nav"
 					:aria-pressed="isNavActive"
 					:aria-expanded="isNavActive"
+					@click="toggleNavStatus"
 				>
 					<span class="menu-toggle-label screen-reader-only">{{ menuToggleText }}</span>
 					<span class="menu-toggle__line" aria-hidden="true"></span>
 				</button>
 				<nav id="site-nav" class="site-nav" :class="{ 'is-expanded': isNavActive }">
-					<a href="#about-me" class="site-nav__link">About me</a>
-					<a href="#skills" class="site-nav__link">Skills</a>
-					<a href="#projects" class="site-nav__link">Work</a>
-					<a href="#contact" class="site-nav__link">Contact</a>
+					<a href="#about-me" class="site-nav__link" @click="deactivateNav">About me</a>
+					<a href="#skills" class="site-nav__link" @click="deactivateNav">Skills</a>
+					<a href="#projects" class="site-nav__link" @click="deactivateNav">Work</a>
+					<a href="#contact" class="site-nav__link" @click="deactivateNav">Contact</a>
 				</nav>
 			</div>
 		</header>
 		<slot />
+		<footer class="site-footer">
+			<div class="container">
+				<a href="https://github.com/rodrigodagostino/personal-portfolio-v1" target="_blank">
+					Built with
+					<img svg-inline src="@/assets/logos/gridsome.svg" alt="Gridsome logo" /> by
+					Rodrigo D’Agostino
+				</a>
+			</div>
+		</footer>
 	</div>
 </template>
 
@@ -42,6 +51,9 @@ export default {
 	methods: {
 		toggleNavStatus() {
 			this.isNavActive = !this.isNavActive
+		},
+		deactivateNav() {
+			this.isNavActive = false
 		},
 	},
 	mounted() {
@@ -320,7 +332,7 @@ html {
 	&:hover {
 		background-color: var(--grey-500);
 	}
-	
+
 	&:active {
 		background-color: var(--grey-600);
 	}
@@ -358,6 +370,16 @@ a:hover {
 	color: var(--nebula-500);
 }
 
+.layout {
+	.site-main {
+		transition: filter 0.32s ease;
+	}
+
+	&.blured .site-main {
+		filter: blur(5px);
+	}
+}
+
 .container {
 	width: 100%;
 	max-width: 58rem; /* 928px */
@@ -390,12 +412,12 @@ a:hover {
 .site-nav {
 	&__link {
 		position: relative;
-		padding: 0.5rem 0.75rem;
 		text-transform: uppercase;
+		padding: 0.5rem 0.75rem;
+		border-radius: 0.25rem;
 
 		&.is-current {
 			color: var(--nebula-500);
-			border-radius: 0.25rem;
 			background-color: var(--nebula-100);
 		}
 	}
@@ -495,19 +517,38 @@ a:hover {
 	}
 }
 
+.site-footer {
+	font-size: 0.875rem;
+	text-align: center;
+	padding: 2rem 0;
+
+	svg {
+		height: 1.25rem;
+		width: auto;
+		vertical-align: text-bottom;
+		margin: 0 0.25rem;
+	}
+}
+
 @media screen and (max-width: 42.4375em) {
 	.site-nav {
-		display: none;
+		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		text-align: right;
 		position: absolute;
-		top: 100%;
+		top: 0;
 		right: 0;
+		width: calc(100vw - 6rem);
+		height: 100vh;
 		padding: 2rem;
 		background-color: var(--grey-150);
+		transform: translateX(100%);
+		transition: transform 0.32s ease;
 
 		&.is-expanded {
-			display: flex;
+			box-shadow: var(--box-shadow-3);
+			transform: translateX(0);
 		}
 
 		&__link {
