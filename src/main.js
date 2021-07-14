@@ -2,6 +2,7 @@
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
 import DefaultLayout from '~/layouts/Default.vue'
+import RevealOnScroll from './directives/reveal-on-scroll'
 
 export default function ( Vue, { router, head, isClient } ) {
 	head.link.push( {
@@ -27,4 +28,7 @@ export default function ( Vue, { router, head, isClient } ) {
 	} )
 	// Set default layout as a global component
 	Vue.component( 'Layout', DefaultLayout )
+
+	// Register custom directives
+	Vue.directive( 'reveal-on-scroll', RevealOnScroll )
 }
