@@ -31,7 +31,7 @@
 							class="skill__image"
 							svg-inline
 							src="~/assets/logos/sass.svg"
-							alt="JavaScript logo"
+							alt="Sass logo"
 						/>
 					</div>
 					<p class="skill__title">Sass</p>
@@ -53,7 +53,7 @@
 							class="skill__image"
 							svg-inline
 							src="~/assets/logos/php.svg"
-							alt="React.js logo"
+							alt="PHP logo"
 						/>
 					</div>
 					<p class="skill__title">PHP</p>
@@ -101,6 +101,17 @@
 						<img
 							class="skill__image"
 							svg-inline
+							src="~/assets/logos/tailwindcss.svg"
+							alt="Bootstrap logo"
+						/>
+					</div>
+					<p class="skill__title">Tailwind CSS</p>
+				</li>
+				<li class="skill">
+					<div class="skill__image-wrapper">
+						<img
+							class="skill__image"
+							svg-inline
 							src="~/assets/logos/bootstrap.svg"
 							alt="Bootstrap logo"
 						/>
@@ -117,8 +128,19 @@
 						<img
 							class="skill__image"
 							svg-inline
+							src="~/assets/logos/npm.svg"
+							alt="NPM logo"
+						/>
+					</div>
+					<p class="skill__title">NPM</p>
+				</li>
+				<li class="skill">
+					<div class="skill__image-wrapper">
+						<img
+							class="skill__image"
+							svg-inline
 							src="~/assets/logos/git.svg"
-							alt="JavaScript logo"
+							alt="Git logo"
 						/>
 					</div>
 					<p class="skill__title">Git</p>
@@ -129,7 +151,7 @@
 							class="skill__image"
 							svg-inline
 							src="~/assets/logos/github.svg"
-							alt="JavaScript logo"
+							alt="GitHub logo"
 						/>
 					</div>
 					<p class="skill__title">GitHub</p>
@@ -140,7 +162,7 @@
 							class="skill__image"
 							svg-inline
 							src="~/assets/logos/webpack.svg"
-							alt="Bootstrap logo"
+							alt="Webpack logo"
 						/>
 					</div>
 					<p class="skill__title">Webpack</p>
@@ -151,7 +173,7 @@
 							class="skill__image"
 							svg-inline
 							src="~/assets/logos/wordpress.svg"
-							alt="JavaScript logo"
+							alt="WordPress logo"
 						/>
 					</div>
 					<p class="skill__title">WordPress</p>
@@ -162,7 +184,7 @@
 							class="skill__image"
 							svg-inline
 							src="~/assets/logos/netlify.svg"
-							alt="JavaScript logo"
+							alt="Netlify logo"
 						/>
 					</div>
 					<p class="skill__title">Netlify</p>
@@ -178,7 +200,7 @@
 							class="skill__image"
 							svg-inline
 							src="~/assets/logos/figma.svg"
-							alt="JavaScript logo"
+							alt="Figma logo"
 						/>
 					</div>
 					<p class="skill__title">Figma</p>
@@ -189,7 +211,7 @@
 							class="skill__image"
 							svg-inline
 							src="~/assets/logos/adobe.svg"
-							alt="JavaScript logo"
+							alt="Adobe logo"
 						/>
 					</div>
 					<p class="skill__title">Adobe Suite</p>
@@ -200,10 +222,21 @@
 							class="skill__image"
 							svg-inline
 							src="~/assets/logos/affinity.svg"
-							alt="JavaScript logo"
+							alt="Affinity logo"
 						/>
 					</div>
 					<p class="skill__title">Affinity Suite</p>
+				</li>
+				<li class="skill">
+					<div class="skill__image-wrapper">
+						<img
+							class="skill__image"
+							svg-inline
+							src="~/assets/logos/blender.svg"
+							alt="Blender logo"
+						/>
+					</div>
+					<p class="skill__title">Blender</p>
 				</li>
 			</ul>
 		</div>
@@ -224,10 +257,10 @@ export default {}
 
 .skill-list {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(48px, 68px));
 	list-style: none;
 	margin-top: 1.5rem;
-	grid-gap: 1rem;
+	grid-gap: 0.75rem;
 
 	&__heading {
 		font-size: clamp(1.25rem, 5vw, 1.5rem);
@@ -261,13 +294,9 @@ export default {}
 	}
 }
 
-@media screen and (min-width: 42.5em) {
+@media screen and (min-width: 44em) {
 	.row {
 		grid-template-columns: 1fr 1fr;
-	}
-
-	.skill-list {
-		grid-template-columns: repeat(5, 1fr);
 	}
 }
 </style>
