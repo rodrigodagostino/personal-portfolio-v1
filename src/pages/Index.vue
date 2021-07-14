@@ -19,11 +19,14 @@
 				<a href="https://github.com/rodrigodagostino">
 					<img svg-inline src="~/assets/icons/github.svg" alt="Visit my GitHub page" />
 				</a>
-				<a href="https://www.linkedin.com/in/rodrigodagostino/">
-					<img svg-inline src="~/assets/icons/linkedin.svg" alt="Visit my LinkedIn profile" />
+				<a href="https://codepen.io/rodrigodagostino">
+					<img svg-inline src="~/assets/icons/codepen.svg" alt="Visit my Codepen page" />
 				</a>
 				<a href="https://behance.net/rodrigodagostino">
 					<img svg-inline src="~/assets/icons/behance.svg" alt="Visit my Behance page" />
+				</a>
+				<a href="https://www.linkedin.com/in/rodrigodagostino/">
+					<img svg-inline src="~/assets/icons/linkedin.svg" alt="Visit my LinkedIn profile" />
 				</a>
 				<a href="mailto:rodrigo.dagostino@gmail.com">
 					<img svg-inline src="~/assets/icons/envelope.svg" alt="Send me an e-mail" />
@@ -35,6 +38,10 @@
 			</BaseSection>
 			<BaseSection name="projects" title="Some things I’ve built">
 				<ProjectList :allProjects="$page.allProject.edges" />
+			</BaseSection>
+			<BaseSection name="contact" title="Get in touch">
+				<p>Are you interested in working together?<br>Hit me up! My inbox is always open 😉</p>
+				<BaseButton href="mailto:rodrigo.dagostino@gmail.com" variation="solid-dark">Say hello</BaseButton>
 			</BaseSection>
 		</main>
 	</Layout>
