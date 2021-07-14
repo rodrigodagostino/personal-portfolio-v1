@@ -25,7 +25,7 @@ export default {
 <style lang="scss">
 .section {
 	&__header + &__content {
-		margin-top: 4rem;
+		margin-top: 2.5rem;
 	}
 
 	&__title {
@@ -39,7 +39,7 @@ export default {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
-	padding: 4rem 0;
+	padding: 6rem 0;
 	position: relative;
 	transition: padding 0.32s ease;
 
@@ -65,6 +65,10 @@ export default {
 @media screen and (min-width: 42.5em) {
 	.section {
 		padding: 8rem 0;
+
+		&__header + &__content {
+			margin-top: 4rem;
+		}
 	}
 }
 </style>
