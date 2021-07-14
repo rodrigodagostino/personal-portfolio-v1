@@ -86,10 +86,9 @@ export default {
 	&__description {
 		background-color: var(--grey-200);
 		padding: 1.25rem;
-		margin: 8rem 1rem 0;
+		margin: 10rem 1rem 0;
 		border-radius: 0.25rem;
 		box-shadow: var(--box-shadow-3);
-		z-index: 1;
 	}
 
 	&__tags {
