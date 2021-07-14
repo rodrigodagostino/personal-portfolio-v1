@@ -2,7 +2,12 @@
 	<div class="layout" :class="{ blured: isNavActive }">
 		<header id="site-header" class="site-header">
 			<div class="container">
-				<g-link to="/" class="site-nav__home">RD’</g-link>
+				<g-link
+					to="/"
+					class="site-nav__home"
+					v-reveal-on-scroll="{ animation: 'fade-left', delay: 100, force: true }"
+					>RD’</g-link
+				>
 				<button
 					id="menu-toggle"
 					class="menu-toggle"
@@ -16,10 +21,34 @@
 					<span class="menu-toggle__line" aria-hidden="true"></span>
 				</button>
 				<nav id="site-nav" class="site-nav" :class="{ 'is-expanded': isNavActive }">
-					<a href="#about-me" class="site-nav__link" @click="deactivateNav">About me</a>
-					<a href="#skills" class="site-nav__link" @click="deactivateNav">Skills</a>
-					<a href="#projects" class="site-nav__link" @click="deactivateNav">Work</a>
-					<a href="#contact" class="site-nav__link" @click="deactivateNav">Contact</a>
+					<a
+						href="#about-me"
+						class="site-nav__link"
+						@click="deactivateNav"
+						v-reveal-on-scroll="{ animation: 'fade-down', delay: 100, force: true }"
+						>About me</a
+					>
+					<a
+						href="#skills"
+						class="site-nav__link"
+						@click="deactivateNav"
+						v-reveal-on-scroll="{ animation: 'fade-down', delay: 200, force: true }"
+						>Skills</a
+					>
+					<a
+						href="#projects"
+						class="site-nav__link"
+						@click="deactivateNav"
+						v-reveal-on-scroll="{ animation: 'fade-down', delay: 300, force: true }"
+						>Work</a
+					>
+					<a
+						href="#contact"
+						class="site-nav__link"
+						@click="deactivateNav"
+						v-reveal-on-scroll="{ animation: 'fade-down', delay: 400, force: true }"
+						>Contact</a
+					>
 				</nav>
 			</div>
 		</header>
@@ -63,34 +92,40 @@ export default {
 		/**
 		 * Handle header and nav items classes based on current window position.
 		 */
-		window.addEventListener( 'scroll', () => {
-			// Add “.is-active” to the site header if the current window position is higher than 0.
-			// Remove it if not.
-			if ( window.pageYOffset > 0 ) {
-				siteHeader.classList.add( 'is-active' )
-			} else {
-				siteHeader.classList.remove( 'is-active' )
-			}
-
-			// Add “.is-current” to a site nav link if it matches the ID of the current section.
-			// Remove it if not.
-			siteSections.forEach( section => {
-				const sectionTop = section.offsetTop
-				const sectionBottom = section.offsetTop + section.offsetHeight
-				const sectionID = section.id
-				const currentMenuItem = document.querySelector( `a[href="#${ sectionID }"]` )
-
-				if (
-					window.pageYOffset >= sectionTop - 100 &&
-					window.pageYOffset <= sectionBottom - 100 &&
-					currentMenuItem
-				) {
-					currentMenuItem.classList.add( 'is-current' )
+		if ( siteHeader ) {
+			window.addEventListener( 'scroll', () => {
+				// Add “.is-active” to the site header if the current window position is higher than 0.
+				// Remove it if not.
+				if ( window.pageYOffset > 0 ) {
+					siteHeader.classList.add( 'is-active' )
 				} else {
-					currentMenuItem.classList.remove( 'is-current' )
+					siteHeader.classList.remove( 'is-active' )
 				}
 			} )
-		} )
+		}
+
+		if ( siteSections.length ) {
+			const observerOptions = {
+				// rootMargin: '-100px 0px -100px 0px',
+				threshold: 0.25,
+			}
+			const sectionsObserver = new IntersectionObserver( entries => {
+				entries.forEach( entry => {
+					const currentNavItem = siteHeader.querySelector(
+						`.site-nav__link[href="#${ entry.target.id }"`
+					)
+					if ( entry.isIntersecting ) {
+						currentNavItem.classList.add( 'is-current' )
+					} else {
+						currentNavItem.classList.remove( 'is-current' )
+					}
+				} )
+			}, observerOptions )
+
+			siteSections.forEach( section => {
+				sectionsObserver.observe( section )
+			} )
+		}
 
 		/**
 		 * Smooth scrolling when clicking on any anchor tag present in the document.
@@ -313,6 +348,7 @@ body {
 
 html {
 	scrollbar-width: thin;
+	scrollbar-color: var(--grey-400) var(--grey-200);
 }
 
 ::-webkit-scrollbar {
