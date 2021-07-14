@@ -1,6 +1,6 @@
 <template>
 	<div class="row">
-		<div class="column">
+		<div class="column" v-reveal-on-scroll="{ animation: 'fade-up' }">
 			<h3 class="skill-list__heading">Programming Languages</h3>
 			<ul class="skill-list">
 				<li class="skill">
@@ -60,7 +60,7 @@
 				</li>
 			</ul>
 		</div>
-		<div class="column">
+		<div class="column" v-reveal-on-scroll="{ animation: 'fade-up', delay: 100 }">
 			<h3 class="skill-list__heading">Libraries & Frameworks</h3>
 			<ul class="skill-list">
 				<li class="skill">
@@ -120,7 +120,7 @@
 				</li>
 			</ul>
 		</div>
-		<div class="column">
+		<div class="column" v-reveal-on-scroll="{ animation: 'fade-up' }">
 			<h3 class="skill-list__heading">Tools & Platforms</h3>
 			<ul class="skill-list">
 				<li class="skill">
@@ -191,7 +191,7 @@
 				</li>
 			</ul>
 		</div>
-		<div class="column">
+		<div class="column" v-reveal-on-scroll="{ animation: 'fade-up', delay: 100 }">
 			<h3 class="skill-list__heading">Design</h3>
 			<ul class="skill-list">
 				<li class="skill">

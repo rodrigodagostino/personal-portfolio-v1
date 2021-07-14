@@ -1,6 +1,11 @@
 <template>
 	<ul class="project-list">
-		<li v-for="project in allProjects" :key="project.id" class="project">
+		<li
+			v-for="project in allProjects"
+			:key="project.id"
+			class="project"
+			v-reveal-on-scroll="{ animation: 'fade-up' }"
+		>
 			<div class="project__content">
 				<h3 class="project__title">
 					<g-link :to="project.node.path">

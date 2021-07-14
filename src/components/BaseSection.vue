@@ -3,10 +3,12 @@
 		<div class="container">
 			<slot name="header">
 				<header class="section__header">
-					<h2 class="section__title">{{ title }}</h2>
+					<h2 class="section__title" v-reveal-on-scroll="{ animation: 'fade-up' }">
+						{{ title }}
+					</h2>
 				</header>
 			</slot>
-			<div class="section__content">
+			<div class="section__content" v-reveal-on-scroll="{ animation: 'fade-up' }">
 				<slot />
 			</div>
 		</div>
