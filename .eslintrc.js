@@ -8,6 +8,7 @@ module.exports = {
 		document: true,
 		location: true,
 		history: true,
+		IntersectionObserver: true,
 	},
 	extends: [ 'plugin:gridsome/recommended', 'eslint:recommended' ],
 	parserOptions: {
