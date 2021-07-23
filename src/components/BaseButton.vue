@@ -164,7 +164,7 @@ export default {
 	color: var(--grey-050);
 	text-shadow: 0 1px 1px rgba(45, 35, 66, 0.32);
 	background: radial-gradient(100% 100% at 100% 0%, var(--cyan-400) 0%, var(--nebula-500) 100%);
-	box-shadow: 0 0.25rem 0 var(--nebula-600), 0 -1px 4px rgba(45, 35, 66, 0.12),
+	box-shadow: 0 0.25rem 0 var(--grey-700), 0 -1px 4px rgba(45, 35, 66, 0.12),
 		0 5px 1px rgba(45, 35, 66, 0.12), 0 6px 2px rgba(45, 35, 66, 0.12),
 		0 8px 4px rgba(45, 35, 66, 0.12), 0 12px 8px rgba(45, 35, 66, 0.12),
 		0 20px 16px rgba(45, 35, 66, 0.12);
@@ -175,7 +175,7 @@ export default {
 
 .button--solid-primary:focus,
 .button--solid-primary:hover {
-	box-shadow: 0 0.375rem 0 var(--nebula-600), 0 -1px 4px rgba(45, 35, 66, 0.12),
+	box-shadow: 0 0.375rem 0 var(--grey-700), 0 -1px 4px rgba(45, 35, 66, 0.12),
 		0 7px 1px rgba(45, 35, 66, 0.12), 0 8px 2px rgba(45, 35, 66, 0.12),
 		0 10px 4px rgba(45, 35, 66, 0.12), 0 16px 8px rgba(45, 35, 66, 0.12),
 		0 24px 16px rgba(45, 35, 66, 0.12);
@@ -183,7 +183,7 @@ export default {
 }
 
 .button--solid-primary:active {
-	box-shadow: 0 0.125rem 0 var(--nebula-600), 0 -1px 4px rgba(45, 35, 66, 0.12),
+	box-shadow: 0 0.125rem 0 var(--grey-700), 0 -1px 4px rgba(45, 35, 66, 0.12),
 		0 3px 1px rgba(45, 35, 66, 0.12), 0 5px 2px rgba(45, 35, 66, 0.12),
 		0 6px 4px rgba(45, 35, 66, 0.12), 0 8px 8px rgba(45, 35, 66, 0.12),
 		0 16px 16px rgba(45, 35, 66, 0.12);
