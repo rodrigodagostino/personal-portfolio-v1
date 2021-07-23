@@ -6,6 +6,7 @@
 					<h2 class="section__title" v-reveal-on-scroll="{ animation: 'fade-up' }">
 						{{ title }}
 					</h2>
+					<span class="section__title-decoration" v-reveal-on-scroll="{ animation: 'fade-up' }" />
 				</header>
 			</slot>
 			<div class="section__content" v-reveal-on-scroll="{ animation: 'fade-up' }">
@@ -30,9 +31,23 @@ export default {
 		margin-top: 2.5rem;
 	}
 
+	&__header {
+		display: flex;
+		align-items: center;
+	}
+
 	&__title {
 		font-size: clamp(1.625rem, 5vw, 2rem);
 		line-height: 1;
+		flex: 1 0 auto;
+		max-width: 80%;
+	}
+
+	&__title-decoration {
+		height: 0.125rem;
+		width: 100%;
+		background-color: var(--grey-300);
+		margin-left: 1.25rem;
 	}
 }
 
