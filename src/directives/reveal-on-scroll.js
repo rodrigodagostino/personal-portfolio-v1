@@ -11,7 +11,6 @@ export default {
 		const observer = new IntersectionObserver( ( entries, observer ) => {
 			entries.forEach( entry => {
 				if ( entry.isIntersecting || binding.value.force ) {
-					console.log( entry.target )
 					entry.target.classList.add( 'ros-animate' )
 					observer.unobserve( entry.target )
 				}
