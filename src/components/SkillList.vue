@@ -189,6 +189,17 @@
 					</div>
 					<p class="skill__title">Netlify</p>
 				</li>
+				<li class="skill">
+					<div class="skill__image-wrapper">
+						<img
+							class="skill__image"
+							svg-inline
+							src="~/assets/logos/linode.svg"
+							alt="Linode logo"
+						/>
+					</div>
+					<p class="skill__title">Linode</p>
+				</li>
 			</ul>
 		</div>
 		<div class="column" v-reveal-on-scroll="{ animation: 'fade-up', delay: 100 }">
