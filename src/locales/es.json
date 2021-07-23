@@ -1,0 +1,21 @@
+{
+	"welcome1": "¡Hola! Mi nombre es",
+	"welcome2": "Rodrigo D’Agostino,",
+	"welcome3": "construyo cosas para la web.",
+	"welcome4": "Soy un diseñador web y desarrollador front-end que actualmente vive en Córdoba, Argentina y busco trabajar contigo para hacer cosas que <em>marquen la diferencia</em>.",
+	"welcomeCTA": "Currículum",
+	"welcomeCTAUrl": "/rodrigo-dagostino-cv-es.pdf",
+	"aboutMeLink": "Acerca de mí",
+	"skillsLink": "Habilidades",
+	"skillsTitle": "Algunas tecnologías con las que he estado trabajando",
+	"projectsLink": "Trabajos",
+	"projectsTitle": "Algunas cosas que he construido",
+	"projectButton1": "Demo en vivo",
+	"projectButton2": "Código fuente",
+	"contactLink": "Contactar",
+	"contactTitle": "Ponete en contacto",
+	"contactContent": "¿Estás interesado en trabajar juntos?<br />¡Hacémelo saber! Mi bandeja de entrada está siempre abierta 😉",
+	"contactCTA": "Decí hola",
+	"credits1": "Construido con",
+	"credits2": "por Rodrigo D’Agostino"
+}

@@ -6,8 +6,8 @@
 					to="/"
 					class="site-nav__home"
 					v-reveal-on-scroll="{ animation: 'fade-left', delay: 100, force: true }"
-					>RD’</g-link
-				>
+					>RD’
+				</g-link>
 				<button
 					id="menu-toggle"
 					class="menu-toggle"
@@ -26,39 +26,41 @@
 						class="site-nav__link"
 						@click="deactivateNav"
 						v-reveal-on-scroll="{ animation: 'fade-down', delay: 100, force: true }"
-						>About me</a
-					>
+						>{{ $t('aboutMeLink') }}
+					</a>
 					<a
 						href="#skills"
 						class="site-nav__link"
 						@click="deactivateNav"
 						v-reveal-on-scroll="{ animation: 'fade-down', delay: 200, force: true }"
-						>Skills</a
-					>
+						>{{ $t('skillsLink') }}
+					</a>
 					<a
 						href="#projects"
 						class="site-nav__link"
 						@click="deactivateNav"
 						v-reveal-on-scroll="{ animation: 'fade-down', delay: 300, force: true }"
-						>Work</a
-					>
+						>{{ $t('projectsLink') }}
+					</a>
 					<a
 						href="#contact"
 						class="site-nav__link"
 						@click="deactivateNav"
 						v-reveal-on-scroll="{ animation: 'fade-down', delay: 400, force: true }"
-						>Contact</a
-					>
+						>{{ $t('contactLink') }}
+					</a>
+					<LocaleSwitcher v-reveal-on-scroll="{ animation: 'fade-down', delay: 500, force: true }" />
 				</nav>
+				<div v-if="isNavActive" class="menu-backdrop" @click="deactivateNav"></div>
 			</div>
 		</header>
 		<slot />
 		<footer class="site-footer">
 			<div class="container">
 				<a href="https://github.com/rodrigodagostino/personal-portfolio-v1" target="_blank">
-					Built with
-					<img svg-inline src="@/assets/logos/gridsome.svg" alt="Gridsome logo" /> by
-					Rodrigo D’Agostino
+					{{ $t( 'credits1') }}
+					<img svg-inline src="~/assets/logos/gridsome.svg" alt="Gridsome logo" />
+					{{ $t( 'credits2') }}
 				</a>
 			</div>
 		</footer>
@@ -66,7 +68,10 @@
 </template>
 
 <script>
+import LocaleSwitcher from '@/components/LocaleSwitcher.vue'
+
 export default {
+	components: { LocaleSwitcher },
 	data() {
 		return {
 			isNavActive: false,
@@ -380,9 +385,15 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: var(--font-primary);
+	font-weight: 500;
 	line-height: 1.2;
 	letter-spacing: -0.015em;
+}
+
+h1,
+h2 {
+	font-family: var(--font-primary);
+	font-weight: 700;
 }
 
 * + p,
@@ -446,6 +457,8 @@ a:hover {
 }
 
 .site-nav {
+	z-index: 10;
+
 	&__link {
 		position: relative;
 		text-transform: uppercase;
@@ -553,6 +566,15 @@ a:hover {
 	}
 }
 
+.menu-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 5;
+}
+
 .site-footer {
 	font-size: 0.875rem;
 	text-align: center;
@@ -585,12 +607,18 @@ a:hover {
 		&.is-expanded {
 			box-shadow: var(--box-shadow-3);
 			transform: translateX(0);
+
+			.site-nav__link {
+				transform: translate3d(0, 0, 0);
+			}
 		}
 
 		&__link {
 			font-size: 2rem;
+			transform: translate3d(-2rem, 0, 0);
+			transition: transform 0.32s ease 0.32s;
 
-			& + .site-nav__link {
+			& + * {
 				margin-top: 1rem;
 			}
 		}
@@ -626,7 +654,7 @@ a:hover {
 		&__link {
 			font-size: 1rem;
 
-			& + .site-nav__link {
+			& + * {
 				margin-left: 1rem;
 			}
 		}

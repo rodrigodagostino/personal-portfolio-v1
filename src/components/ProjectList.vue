@@ -20,10 +20,10 @@
 				</ul>
 				<div class="project__actions">
 					<BaseButton :href="project.node.demoUrl" target="blank" variation="solid-dark">
-						Live demo
+						{{ $t('projectButton1') }}
 					</BaseButton>
 					<BaseButton :href="project.node.sourceUrl" target="blank" variation="solid">
-						Source code
+						{{ $t('projectButton2') }}
 					</BaseButton>
 				</div>
 			</div>
@@ -93,7 +93,7 @@ export default {
 		padding: 1.25rem;
 		margin: 10rem 1rem 0;
 		border-radius: 0.25rem;
-		box-shadow: var(--box-shadow-3);
+		box-shadow: var(--box-shadow-2);
 	}
 
 	&__tags {

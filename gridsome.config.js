@@ -4,6 +4,8 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+const i18n = require( './plugins/i18n' )
+
 module.exports = {
 	siteName: 'Rodrigo D’Agostino',
 	titleTemplate: '%s',
@@ -18,6 +20,7 @@ module.exports = {
 				},
 			},
 		},
+		i18n,
 	],
 	templates: {
 		Project: '/projects/:slug',

@@ -4,27 +4,26 @@
 			<BaseSection name="about-me" title="Some things I’ve built">
 				<template #header>
 					<p v-reveal-on-scroll="{ animation: 'fade-up', delay: 150 }">
-						Hi there! My name is
+						{{ $t('welcome1') }}
 					</p>
 					<h1 class="section__title">
 						<span
 							class="section__title-line-1"
 							v-reveal-on-scroll="{ animation: 'fade-up', delay: 300 }"
 						>
-							Rodrigo D’Agostino,
+							{{ $t('welcome2') }}
 						</span>
 						<span
 							class="section__title-line-2"
 							v-reveal-on-scroll="{ animation: 'fade-up', delay: 450 }"
 						>
-							I build things for the web.
+							{{ $t('welcome3') }}
 						</span>
 					</h1>
-					<p v-reveal-on-scroll="{ animation: 'fade-up', delay: 600 }">
-						I'm a web designer and front-end developer currently based in Córdoba,
-						Argentina looking to work along with you to make things that
-						<em>make a difference</em>.
-					</p>
+					<p
+						v-reveal-on-scroll="{ animation: 'fade-up', delay: 600 }"
+						v-html="$t('welcome4')"
+					/>
 				</template>
 				<div v-reveal-on-scroll="{ animation: 'fade-up', delay: 750 }">
 					<a href="https://github.com/rodrigodagostino">
@@ -58,19 +57,21 @@
 					<a href="mailto:rodrigo.dagostino@gmail.com">
 						<img svg-inline src="~/assets/icons/envelope.svg" alt="Send me an e-mail" />
 					</a>
-					<BaseButton href="~/resume.pdf" variation="solid-primary">Resume</BaseButton>
+					<BaseButton :href="$t('welcomeCTAUrl')" variation="solid-primary">
+						{{ $t('welcomeCTA') }}
+					</BaseButton>
 				</div>
 			</BaseSection>
-			<BaseSection name="skills" title="Some technologies I’ve been working with">
+			<BaseSection name="skills" :title="$t('skillsTitle')">
 				<SkillList />
 			</BaseSection>
-			<BaseSection name="projects" title="Some things I’ve built">
+			<BaseSection name="projects" :title="$t('projectsTitle')">
 				<ProjectList :allProjects="$page.allProject.edges" />
 			</BaseSection>
-			<BaseSection name="contact" title="Get in touch">
-				<p>Are you interested in working together?<br />Hit me up! My inbox is always open 😉</p>
+			<BaseSection name="contact" :title="$t('contactTitle')">
+				<p v-html="$t('contactContent')" />
 				<BaseButton href="mailto:rodrigo.dagostino@gmail.com" variation="solid-dark">
-					Say hello
+					{{ $t('contactCTA') }}
 				</BaseButton>
 			</BaseSection>
 		</main>
