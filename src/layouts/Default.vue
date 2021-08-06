@@ -64,6 +64,7 @@
 				</a>
 			</div>
 		</footer>
+		<portal-target name="app" />
 	</div>
 </template>
 
