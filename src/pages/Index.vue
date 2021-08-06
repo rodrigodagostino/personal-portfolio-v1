@@ -80,11 +80,12 @@
 
 <page-query>
 query {
-	allProject(sortBy: "priority", order: ASC, limit: 4) {
+	allProject(sortBy: "priority", order: ASC, limit: 5) {
 		edges {
 			node {
 				title
-				description
+				descriptionEN
+				descriptionES
 				imageUrl
 				tags
 				sourceUrl
@@ -202,6 +203,23 @@ export default {
 
 .ros-fade-left {
 	transform: translate3d(-4rem, 0, 0);
+}
+
+.fade-enter-active {
+	animation: fade 0.32s ease;
+}
+
+.fade-leave-active {
+	animation: fade 0.32s ease reverse;
+}
+
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 /**
