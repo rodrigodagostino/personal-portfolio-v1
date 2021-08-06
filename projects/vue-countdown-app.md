@@ -1,7 +1,8 @@
 ---
 title: Vue Countdown App
 slug: vue-countdown-app
-description: Yes, I know! The typical to-do app everyone starts with, right? But go ahead, take a look. As with all my other projects, I take a simple idea and push it a little bit further.
+descriptionEN: An app that runs a countdown based on the time you have entered. A colored track will display the current progress along with the time units.
+descriptionES: Una aplicación que ejecuta una cuenta regresiva basada en el tiempo que ingresaste. Una pista de color mostrará el progreso actual junto a las unidades de tiempo.
 imageUrl: ./assets/vue-countdown-app.png
 tags:
 - javascript
@@ -9,7 +10,7 @@ tags:
 - sass
 sourceUrl: https://github.com/rodrigodagostino/vue-countdown-app
 demoUrl: https://v-countdown-app.netlify.app
-priority: 4
+priority: 5
 ---
 
 This is my Vue Countdown App

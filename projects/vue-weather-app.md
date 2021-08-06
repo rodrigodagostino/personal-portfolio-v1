@@ -1,7 +1,8 @@
 ---
 title: Vue Weather App
 slug: vue-weather-app
-description: Yes, I know! The typical to-do app everyone starts with, right? But go ahead, take a look. As with all my other projects, I take a simple idea and push it a little bit further.
+descriptionEN: An app that displays weather conditions based on the location you have entered. Colors will change depending on the weather conditions and the time of day.
+descriptionES: Una aplicación que muestra las condiciones climáticas según la ubicación que ingreses. Los colores cambiarán según las condiciones climáticas y la hora del día.
 imageUrl: ./assets/vue-weather-app.png
 tags:
 - vue
@@ -9,7 +10,7 @@ tags:
 - openWeatherMapAPI
 sourceUrl: https://github.com/rodrigodagostino/vue-weather-app
 demoUrl: https://v-weather-app.netlify.app
-priority: 5
+priority: 4
 ---
 
 This is my Vue Weather App
