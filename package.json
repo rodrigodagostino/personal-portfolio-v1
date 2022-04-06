@@ -22,7 +22,7 @@
     "vue-eslint-parser": "8.3.0",
     "vue-svg-inline-loader": "2.1.2"
   },
-  "overrides": {
+  "resolutions": {
     "remark-html": "13.0.2"
   }
 }
