@@ -1,23 +1,15 @@
 {
-	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": true
-	},
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"editor.detectIndentation": true,
-	"editor.fontLigatures": true,
-	"editor.insertSpaces": false,
-	"editor.tabSize": 4,
-	"files.eol": "\n",
-	"eslint.alwaysShowStatus": true,
-	"eslint.lintTask.enable": true,
-	"eslint.validate": [
-		"javascript",
-		"vue"
-	],
-	"eslint.format.enable": true,
-	"[javascript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"vetur.format.defaultFormatter.js": "prettier-eslint",
-	"vetur.format.options.tabSize": 4,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.detectIndentation": false,
+  "editor.fontLigatures": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "eslint.validate": ["javascript", "vue"],
+  "files.eol": "\n"
 }
